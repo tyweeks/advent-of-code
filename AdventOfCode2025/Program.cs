@@ -1,8 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-using AdventOfCode2025.Days;
-Console.WriteLine("Hello, World!");
+﻿using AdventOfCode2025.Common;
 
-var problem = new Day00();
-var input = System.IO.File.ReadAllText("Inputs/day00.txt");
-Console.WriteLine(problem.SolvePart1(input));
-Console.WriteLine(problem.SolvePart2(input));
+int dayNumber = 0;
+
+var problem = ProblemFactory.Get(dayNumber);
+var input = ProblemFactory.GetInput(dayNumber);
+
+Console.WriteLine($"Day {dayNumber:D2} Solutions:");
+Console.WriteLine($"Part 1: {problem.SolvePart1(input)}");
+Console.WriteLine($"Part 2: {problem.SolvePart2(input)}");
