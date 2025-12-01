@@ -27,16 +27,7 @@ public class Day01 : IProblem
                 throw new Exception("Invalid direction");
             }
 
-            while (currentNum < 0)
-            {
-                currentNum += 100;
-            }
-
-            while (currentNum > 99)
-            {
-                currentNum -= 100;
-            }
-
+            currentNum = ((currentNum % 100) + 100) % 100;
             if (currentNum == 0)
             {
                 zeroCounter++;
