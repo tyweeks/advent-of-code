@@ -9,6 +9,7 @@ public static class ProblemFactory
         return dayNumber switch
         {
             0 => new Day00(),
+            1 => new Day01(),
             _ => throw new ArgumentException($"Problem for day {dayNumber} not found", nameof(dayNumber))
         };
     }
