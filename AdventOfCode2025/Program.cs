@@ -1,6 +1,6 @@
 ﻿using AdventOfCode2025.Common;
 
-int dayNumber = 1;
+int dayNumber = 2;
 
 var problem = ProblemFactory.Get(dayNumber);
 var input = ProblemFactory.GetInput(dayNumber);
