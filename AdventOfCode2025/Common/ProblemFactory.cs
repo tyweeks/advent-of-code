@@ -11,6 +11,7 @@ public static class ProblemFactory
             0 => new Day00(),
             1 => new Day01(),
             2 => new Day02(),
+            3 => new Day03(),
             _ => throw new ArgumentException($"Problem for day {dayNumber} not found", nameof(dayNumber))
         };
     }
