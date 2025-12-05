@@ -2,20 +2,14 @@
 
 namespace AdventOfCode.Tests.Year2015;
 
-public class Day01Tests
+public class Day06Tests
 {
-    private readonly Day01 _problem = new();
+    private readonly Day06 _problem = new();
 
     [Theory]
-    [InlineData("(())", "0")]
-    [InlineData("()()", "0")]
-    [InlineData("(((", "3")]
-    [InlineData("(()(()(", "3")]
-    [InlineData("))(((((", "3")]
-    [InlineData("())", "-1")]
-    [InlineData("))(", "-1")]
-    [InlineData(")))", "-3")]
-    [InlineData(")())())", "-3")]
+    [InlineData("", "0")]
+    [InlineData("turn on 0,0 through 4,4", "25")]
+    [InlineData("turn on 0,0 through 4,4\r\ntoggle 1,1 through 3,3\r\nturn off 0,0 through 4,0", "11")]
     public void SolvePart1(string input, string expected)
     {
         var result = _problem.SolvePart1(input);
@@ -23,8 +17,9 @@ public class Day01Tests
     }
 
     [Theory]
-    [InlineData(")", "1")]
-    [InlineData("()())", "5")]
+    [InlineData("turn on 0,0 through 0,0", "1")]
+    [InlineData("turn off 0,0 through 0,0", "0")]
+    [InlineData("toggle 0,0 through 999,999", "2000000")]
     public void SolvePart2(string input, string expected)
     {
         var result = _problem.SolvePart2(input);

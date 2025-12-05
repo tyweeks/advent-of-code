@@ -1,6 +1,6 @@
 ﻿using AdventOfCode.Solutions.Year2015;
 
-namespace AdventOfCode2015.Tests;
+namespace AdventOfCode.Tests.Year2015;
 
 public class Day05Tests
 {
