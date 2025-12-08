@@ -1,6 +1,6 @@
 ﻿using AdventOfCode.Common;
 
-int yearNumber = 2015;
+int yearNumber = 2025;
 int dayNumber = 6;
 
 var problem = SolutionFactory.GetSolution(yearNumber, dayNumber);
