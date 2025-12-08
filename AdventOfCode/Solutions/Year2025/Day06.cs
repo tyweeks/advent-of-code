@@ -49,7 +49,59 @@ public class Day06 : ISolution
 
     public string SolvePart2(string input)
     {
-        return "";
+        var charArray = InputParser.GetCharArray(input);
+        var problems = new List<Problem>();
+        Problem currentProblem = new();
+
+        for (int x = charArray.GetLength(0)-1; x >= 0; x--)
+        {
+            string numString = "";
+            bool onCurrentProblem = false;
+            for (int y = 0; y < charArray.GetLength(1); y++)
+            {
+                if (int.TryParse(charArray[x,y].ToString(), out int val))
+                {
+                    numString += charArray[x, y];
+                    onCurrentProblem = true;
+                }
+                else if (charArray[x, y] != ' ')
+                {
+                    currentProblem.Operation = charArray[x, y];
+                    onCurrentProblem = true;
+                }
+            }
+            if (numString != "")
+            {
+                int num = int.Parse(numString);
+                currentProblem.Nums.Add(num);
+            }
+
+            if (!onCurrentProblem)
+            {
+                problems.Add(currentProblem);
+                currentProblem = new Problem();
+            }
+        }
+        problems.Add(currentProblem);
+
+        long total = 0;
+        foreach (var problem in problems)
+        {
+            var result = problem.Nums[0];
+            for (int i = 1; i < problem.Nums.Count; i++)
+            {
+                if (problem.Operation == '+')
+                {
+                    result += problem.Nums[i];
+                }
+                else if (problem.Operation == '*')
+                {
+                    result *= problem.Nums[i];
+                }
+            }
+            total += result;
+        }
+        return total.ToString();
     }
 
     public static List<string> GetLines(string input)
