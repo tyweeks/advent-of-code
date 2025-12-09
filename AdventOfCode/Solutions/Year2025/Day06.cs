@@ -49,7 +49,7 @@ public class Day06 : ISolution
 
     public string SolvePart2(string input)
     {
-        var charArray = InputParser.GetCharArray(input);
+        var charArray = InputParser.ToCharMatrix(input);
         var problems = new List<Problem>();
         Problem currentProblem = new();
 
