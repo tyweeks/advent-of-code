@@ -2,7 +2,7 @@
 
 public class InputParser
 {
-    public static char[,] ToCharMatrix(string input)
+    public static char[,] ToCharGrid(string input)
     {
         var lines = input
                 .Split("\r\n", StringSplitOptions.RemoveEmptyEntries)
@@ -23,11 +23,10 @@ public class InputParser
         return array;
     }
 
-    public static List<string> GetLines(string input)
+    public static string[] ToStringArray(string input)
     {
-        return input
-            .Split('\n', StringSplitOptions.RemoveEmptyEntries)
-            .Select(line => line.Trim())
-            .ToList();
+        return input.Replace("\r\n", "\n")
+         .Replace("\r", "\n")
+         .Split('\n', StringSplitOptions.RemoveEmptyEntries);
     }
 }

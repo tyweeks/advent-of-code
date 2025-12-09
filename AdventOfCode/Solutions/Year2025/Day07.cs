@@ -6,7 +6,7 @@ public class Day07 : ISolution
 {
     public string SolvePart1(string input)
     {
-        var charArray = InputParser.ToCharMatrix(input);
+        var charArray = InputParser.ToCharGrid(input);
         int totalSplits = 0;
 
         for (int y = 1; y < charArray.GetLength(1); y++)
@@ -38,7 +38,7 @@ public class Day07 : ISolution
 
     public string SolvePart2(string input)
     {
-        var charArray = InputParser.ToCharMatrix(input);
+        var charArray = InputParser.ToCharGrid(input);
         return GetTimelines(charArray, 0, 0, "").ToString();
     }
 
