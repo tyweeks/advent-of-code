@@ -1,6 +1,5 @@
 ﻿using AdventOfCode.Common;
 using System.Numerics;
-using System.Runtime.Intrinsics;
 
 namespace AdventOfCode.Solutions.Year2025;
 
