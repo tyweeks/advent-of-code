@@ -1,7 +1,7 @@
 ﻿using AdventOfCode.Common;
 
-int yearNumber = 2025;
-int dayNumber = 9;
+int yearNumber = 2019;
+int dayNumber = 1;
 
 var problem = SolutionFactory.GetSolution(yearNumber, dayNumber);
 var input = SolutionFactory.GetInput(yearNumber, dayNumber);
